@@ -61,7 +61,7 @@ void slide_left(int *line, size_t size)
  */
 void slide_right(int *line, size_t size)
 {
-    size_t pos = size - 1;
+    ssize_t pos = size - 1;
 
     //slide
     for (ssize_t i = size - 1; i >= 0; i--)
