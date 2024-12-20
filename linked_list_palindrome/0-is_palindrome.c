@@ -32,26 +32,23 @@ int is_palindrome(listint_t **head)
     if (!head || !*head || !(*head)->next)
         return (1);
 
-    /* Find the middle of the list */
     while (fast && fast->next)
     {
         slow = slow->next;
         fast = fast->next->next;
     }
 
-    /* Reverse the second half of the list */
     second_half = reverse_list(slow);
 
-    /* Compare the first and the reversed second half */
     first_half = *head;
     while (second_half)
     {
         if (first_half->n != second_half->n)
-            return (0); /* Not a palindrome */
+            return (0);
 
         first_half = first_half->next;
         second_half = second_half->next;
     }
 
-    return (1); /* It's a palindrome */
+    return (1);
 }
