@@ -16,8 +16,9 @@ def validUTF8(data):
     i = 0
     while i < len(data):
         num = data[i]
-        if num > 255:
-            return False
+        # if num > 255:
+        #     return False
+        num = data[i] & 0xFF
 
         if (num >> 7) == 0b0:
             num_bytes = 1
