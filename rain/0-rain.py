@@ -18,23 +18,19 @@ def rain(walls):
         return 0
 
     water = 0
-    left = 0
-    n = len(walls)
+    max_height = max(walls)
 
-    while left < n:
-        if walls[left] == 0:
-            left += 1
-            continue
+    for level in range(1, max_height + 1):
+        in_wall = False
+        count = 0
 
-        right = left + 1
-        while right < n and walls[right] == 0:
-            right += 1
-
-        if right < n:
-            height = min(walls[left], walls[right])
-            count = right - left - 1
-            water += height * count
-
-        left = right
+        for height in walls:
+            if height >= level:
+                if in_wall:
+                    water += count
+                    count = 0
+                in_wall = True
+            elif in_wall:
+                count += 1
 
     return water
