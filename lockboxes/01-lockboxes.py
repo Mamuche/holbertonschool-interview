@@ -11,13 +11,13 @@ and each box may contain keys to the other boxes.
 
 
 def canUnlockAll(boxes):
-# si la liste de boîtes est vide
+    # si la liste de boîtes est vide
     if not boxes:
         return False
-# si la liste n'est pas une liste
+    # si la liste n'est pas une liste
     if not isinstance(boxes, list):
         return False
-# si il n'y a qu'une boîte
+    # si il n'y a qu'une boîte
     if len(boxes) == 1:
         return True
 
@@ -25,8 +25,10 @@ def canUnlockAll(boxes):
     keys = set(boxes[0])  # je regarde les clés dans la boite
 
     while keys:
-        key = keys.pop() # je prends une clé
-        if key not in open and 0 <= key < len(boxes): # Si la clé n'ouvre pas une boîte déjà ouverte et si la clé correspond à une boîte
+        key = keys.pop()  # je prends une clé
+        if key not in open and 0 <= key < len(boxes):
+            # Si la clé n'ouvre pas une boîte déjà ouverte
+            # et si la clé correspond à une boîte
             open.add(key)
             keys.update(boxes[key])
 # je verifie que chaque boite à été ouverte
