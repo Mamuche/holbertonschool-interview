@@ -68,16 +68,16 @@ void sort_number(int *array, size_t size, int sig)
  */
 void radix_sort(int *array, size_t size)
 {
-    int max = number_max(array, size);
-    int sig;
+	int max = number_max(array, size);
+	int sig;
 
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+		return;
 
-    for (sig = 1; max / sig > 0; sig *= 10)
-    {
-        sort_number(array, size, sig);
+	for (sig = 1; max / sig > 0; sig *= 10)
+	{
+		sort_number(array, size, sig);
 
-        print_array(array, size);
-    }
+		print_array(array, size);
+	}
 }
