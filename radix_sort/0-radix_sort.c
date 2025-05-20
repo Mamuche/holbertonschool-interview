@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "sort.h"
 
-
 /**
  * number_max - find the highest number in a array
  *
@@ -26,7 +25,7 @@ int number_max(int *array, size_t size)
 
 /**
  * sort_number - Sorts an array according to a specific digit (LSD)
- * 
+ *
  * @array: The array to be sorted
  * @size: Number of elements in @array
  * @sig: Digit position to sort by (1 = units, 10 = tens...)
