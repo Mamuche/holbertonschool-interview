@@ -5,7 +5,7 @@
 
 /**
  * number_max - find the highest number in a array
- * 
+ *
  * @array: array of integers
  * @size: Number of elements in @array
  * Return: the highest number in the array
