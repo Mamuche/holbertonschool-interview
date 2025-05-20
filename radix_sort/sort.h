@@ -1,8 +1,8 @@
-#include <stddef.h>
-
-
 #ifndef SORT
 #define SORT
+
+
+#include <stddef.h>
 
 
 void print_array(const int *array, size_t size);
