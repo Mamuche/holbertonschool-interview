@@ -11,16 +11,16 @@
  */
 int number_max(int *array, size_t size)
 {
-    int max = array[0];
-    size_t i;
+	int max = array[0];
+	size_t i;
 
-    for (i = 1; i < size; i++)
-    {
-        if (array[i] > max)
-            max = array[i];
-    }
+	for (i = 1; i < size; i++)
+	{
+		if (array[i] > max)
+			max = array[i];
+	}
 
-    return max;
+	return max;
 }
 
 /**
@@ -33,30 +33,30 @@ int number_max(int *array, size_t size)
 
 void sort_number(int *array, size_t size, int sig)
 {
-    int *output = malloc(size * sizeof(int));
-    int count[10] = {0};
-    size_t i;
+	int *output = malloc(size * sizeof(int));
+	int count[10] = {0};
+	size_t i;
 
-    if (!output)
-        return;
+	if (!output)
+		return;
 
-    for (i = 0; i < size; i++)
-        count[(array[i] / sig) % 10]++;
+	for (i = 0; i < size; i++)
+		count[(array[i] / sig) % 10]++;
 
-    for (i = 1; i < 10; i++)
-        count[i] += count[i - 1];
+	for (i = 1; i < 10; i++)
+		count[i] += count[i - 1];
 
-    for (i = size; i > 0; i--)
-    {
-        int digit = (array[i - 1] / sig) % 10;
-        output[count[digit] - 1] = array[i - 1];
-        count[digit]--;
-    }
+	for (i = size; i > 0; i--)
+	{
+		int digit = (array[i - 1] / sig) % 10;
+		output[count[digit] - 1] = array[i - 1];
+		count[digit]--;
+	}
 
-    for (i = 0; i < size; i++)
-        array[i] = output[i];
+	for (i = 0; i < size; i++)
+		array[i] = output[i];
 
-    free(output);
+	free(output);
 }
 
 /**
