@@ -49,7 +49,7 @@ void sort_number(int *array, size_t size, int sig)
 	for (i = size; i > 0; i--)
 	{
 		int digit = (array[i - 1] / sig) % 10;
-		
+
 		output[count[digit] - 1] = array[i - 1];
 		count[digit]--;
 	}
