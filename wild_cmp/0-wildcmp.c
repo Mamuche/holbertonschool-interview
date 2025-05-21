@@ -1,6 +1,7 @@
 
 /**
- * wildcmp - compares two strings and returns 1 if the strings can be considered identical, otherwise return 0
+ * wildcmp - compares two strings and returns 1 if the
+ * strings can be considered identical, otherwise return 0
  *
  * @s1: first string to compare
  * @s2: second string to compare
